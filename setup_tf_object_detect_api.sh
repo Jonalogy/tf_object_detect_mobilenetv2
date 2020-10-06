@@ -18,3 +18,6 @@ cp object_detection/packages/tf2/setup.py $TF_OD_DIR/research/setup.py
 
 PATH="$(pwd)/.venv/bin:$PATH"
 python -m pip install --use-feature=2020-resolver .
+
+# install OpenCV python package
+python -m pip install --use-feature=2020-resolver opencv-python opencv-contrib-python
