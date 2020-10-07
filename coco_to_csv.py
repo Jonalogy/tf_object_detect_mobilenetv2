@@ -5,12 +5,10 @@ from pycocotools.coco import COCO
 
 def coco_to_csv(json_path):
     coco = COCO(json_path)
-    cat = coco.getCatIds()
 
     column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
     entry_list = []
     for ann in coco.loadAnns(ids=coco.getAnnIds()):
-        ann_id = ann["id"]
         img = coco.loadImgs(ids=[ann['image_id']])[0]
         cat_id = ann["category_id"]
         coco_bbox = ann["bbox"]
@@ -33,8 +31,7 @@ def coco_to_csv(json_path):
         entry = (filename, img_width, img_height, class_name, xmin, ymin, xmax, ymax)
         entry_list.append(entry)
 
-    coco_df = pd.DataFrame(entry_list, columns=column_name)
-    return coco_df
+    return pd.DataFrame(entry_list, columns=column_name)
 
 
 if __name__ == "__main__":
