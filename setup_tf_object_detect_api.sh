@@ -17,7 +17,7 @@ protoc object_detection/protos/*.proto --python_out=. # This next line requires 
 cp object_detection/packages/tf2/setup.py $TF_OD_DIR/research/setup.py
 
 PATH="$(pwd)/.venv/bin:$PATH"
-python -m pip install --use-feature=2020-resolver .
+python -m pip install .
 
 # install OpenCV python package
-python -m pip install --use-feature=2020-resolver opencv-python opencv-contrib-python
+python -m pip install opencv-python opencv-contrib-python
