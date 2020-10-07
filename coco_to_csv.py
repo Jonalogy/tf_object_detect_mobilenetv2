@@ -56,8 +56,8 @@ if __name__ == "__main__":
         train_df = coco_df.iloc[:train_till]
         test_df = coco_df.iloc[train_till:]
         print("train_size:", len(train_df.index), ", test_size:", len(test_df.index))
-        train_df.to_csv('train.csv', index=None)
-        test_df.to_csv('test.csv', index=None)
+        train_df.to_csv('data/train.csv', index=None)
+        test_df.to_csv('data/test.csv', index=None)
     else:
         coco_df.to_csv(args.out_csv_path, index=False)
 
