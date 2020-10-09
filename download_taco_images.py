@@ -13,7 +13,7 @@ import sys
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--annotation_path', required=False, default= './data/annotations.json', help='Path to annotations')
-parser.add_argument('--download_to_dir', required=False, default= './data/annotations.json', help='Path to annotations')
+parser.add_argument('--download_to_dir', required=False, default= './data/images', help='Directory path to store images')
 args = parser.parse_args()
 
 # dataset_dir = os.path.dirname(args.dataset_path)
